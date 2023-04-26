@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tf-python
+  name: tf-python-session-1
 spec:
     replicas: 3
     selector:
         matchLabels:
-            app: tf-python
+            app: tf-python-session-1
     template:
         metadata:
             labels:
-                app: tf-python
+                app: tf-python-session-1
         spec:
             containers:
-            - name: tf-python
-              image: jmitchel3/tf-python:latest
+            - name: tf-python-session-1
+              image: christophergarrick/tf-python-session-1:latest
               ports:
                 - containerPort: 8080
               env:
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: tf-python
+  name: tf-python-session-1
 spec:
     type: LoadBalancer
     ports:
@@ -35,4 +35,4 @@ spec:
           targetPort: 8080
           protocol: TCP
     selector:
-        app: tf-python
+        app: tf-python-session-1
