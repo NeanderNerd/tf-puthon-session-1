@@ -5,8 +5,8 @@ terraform {
 			source = "linode/linode"
 			version = ">= 1.30.0"
 		}
-		backend "s3" {} # object storage
 	}
+	backend "s3" {} # object storage
 }
 
 provider "linode" {
