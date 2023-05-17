@@ -14,7 +14,7 @@ provider "linode" {
 }
 
 variable "linode_api_token" {
-	description = ""
+	description = "your linode api token (required)"
 	sensitive = true
 }
 
